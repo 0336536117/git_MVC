@@ -10,7 +10,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 	$cartid = $_POST['cartid'];
     $quantity = $_POST['quantity'];
     $update_quantity_cart = $ct -> update_quantity_cart($cartid,$quantity);
-	echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
 	if($quantity<=0){
 		$delcart = $ct->del_product_cart($cartid); 
 	}
@@ -41,8 +40,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 							<tr>
 								<th width="20%">Tên sản phẩm</th>
 								<th width="10%">Hình ảnh</th>
-								<th width="20%">Giá sản phẩm</th>
-								<th width="20%">Số lượng</th>
+								<th width="15%">Giá sản phẩm</th>
+								<th width="25%">Số lượng</th>
 								<th width="20%">Tổng tiền </th>
 								<th width="10%">Chỉnh sửa</th>
 							</tr>
@@ -87,7 +86,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 						<table style="float:right;text-align:left;" width="40%">
 							<tr>
 								<th>Tổng tiền sản phẩm : </th>
-								<td style="text-align:center;color:red;">
+								<td>
 									<?php
 										echo $subtotal." "."VNĐ";
 										Session::set('sum',$subtotal);
@@ -97,11 +96,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 							</tr>
 							<tr>
 								<th>Thuế VAT : </th>
-								<td  style="text-align:center;color:red;">5%</td>
+								<td>5%</td>
 							</tr>
 							<tr>
 								<th>Tổng cộng :</th>
-								<td style="text-align:center;color:red;">
+								<td>
 									<?php
 										$vat = ($subtotal * 5)/100 + $subtotal;
 										echo $vat ." "."VNĐ";
