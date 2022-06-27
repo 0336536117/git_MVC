@@ -13,7 +13,6 @@
 				  <div class="contact-form">
 				  	<h2>Contact Us</h2>
 					    <form>
-							<p>dat</p>
 					    	<div>
 						    	<span><label>NAME</label></span>
 						    	<span><input type="text" value=""></span>
