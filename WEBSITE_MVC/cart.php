@@ -40,8 +40,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 							<tr>
 								<th width="20%">Tên sản phẩm</th>
 								<th width="10%">Hình ảnh</th>
-								<th width="15%">Giá sản phẩm</th>
-								<th width="25%">Số lượng</th>
+								<th width="20%">Giá sản phẩm</th>
+								<th width="20%">Số lượng</th>
 								<th width="20%">Tổng tiền </th>
 								<th width="10%">Chỉnh sửa</th>
 							</tr>
