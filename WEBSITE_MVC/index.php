@@ -21,7 +21,7 @@
 					 <img src="admin/uploads/<?php echo $result['image']; ?>" height="200px" >
 					 <h2><?php echo $result['productName']; ?> </h2>
 					 <!-- <p><?php echo $fm->textShorten($result['product_desc'], 20); ?> </p> -->
-					 <p><span class="price"><?php echo $result['price']; ?>.VNĐ </span></p>
+					 <p><span class="price"><?php echo $result['price']; ?>VNĐ </span></p>
 				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productid'] ?>" class="details">Chi tiết</a></span></div>
 				</div>
 				<?php
