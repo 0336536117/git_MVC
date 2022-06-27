@@ -87,7 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 						<table style="float:right;text-align:left;" width="40%">
 							<tr>
 								<th>Tổng tiền sản phẩm : </th>
-								<td>
+								<td style="text-align:center;color:red;">
 									<?php
 										echo $subtotal." "."VNĐ";
 										Session::set('sum',$subtotal);
@@ -97,11 +97,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 							</tr>
 							<tr>
 								<th>Thuế VAT : </th>
-								<td>5%</td>
+								<td  style="text-align:center;color:red;">5%</td>
 							</tr>
 							<tr>
 								<th>Tổng cộng :</th>
-								<td>
+								<td style="text-align:center;color:red;">
 									<?php
 										$vat = ($subtotal * 5)/100 + $subtotal;
 										echo $vat ." "."VNĐ";
