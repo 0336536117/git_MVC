@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 	$cartid = $_POST['cartid'];
     $quantity = $_POST['quantity'];
     $update_quantity_cart = $ct -> update_quantity_cart($cartid,$quantity);
+	echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
 	if($quantity<=0){
 		$delcart = $ct->del_product_cart($cartid); 
 	}
