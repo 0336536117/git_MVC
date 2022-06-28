@@ -80,6 +80,7 @@ include 'lib/session.php';
 
 				  <?php
 				  if(isset($_GET['customer_id'])){
+					$delCart = $ct->del_all_data_cart();
 					Session::destroy();
 				  }
 				  ?>
@@ -102,7 +103,22 @@ include 'lib/session.php';
 	  <li><a href="index.php">Trang chủ</a></li>
 	  <li><a href="products.php">Sản phẩm</a> </li>
 	  <li><a href="topbrands.php">Sản phẩm mới</a></li>
-	  <li><a href="cart.php">Giỏ hàng</a></li>
+	  <?php
+		$check_cart = $ct->check_cart();
+		if($check_cart == true){
+			echo '<li><a href="cart.php">Giỏ hàng</a></li>';
+		} else {
+			echo ' ';
+		}
+	  ?>
+	<?php 
+		$login_check = Session::get('customer_login');
+		if($login_check == false){
+			echo '  ';
+		} else {
+			echo '<li><a href="profile.php">Danh sách mua hàng</a> </li>';
+		}
+	?>
 	  <li><a href="contact.php">Liên hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>

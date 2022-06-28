@@ -21,7 +21,7 @@ $filepath = realpath(dirname(__FILE__));
     $address = mysqli_real_escape_string($this->db->link, $data['address']);
     $country = mysqli_real_escape_string($this->db->link, $data['country']);
     $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-    $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+    $password = mysqli_real_escape_string($this->db->link, $data['password']);     //md5
     if($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" || $country == "" || $phone == "" || $password == "" ){
         $alert = "<span class='error'>Fields không được để trống</span>";
         return $alert;
@@ -45,8 +45,8 @@ $filepath = realpath(dirname(__FILE__));
     }
  }
  public function login_customers($data){
-    $email = mysqli_real_escape_string($this->db->link, $data['email']);
-    $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+    $email = mysqli_real_escape_string($this->db->link, $data['email']);       //md5
+    $password = mysqli_real_escape_string($this->db->link, $data['password']);
     if($email == "" || $password == "" ){
         $alert = "<span class='error'>Email hoặc Password không được để trống</span>";
         return $alert;
@@ -64,6 +64,11 @@ $filepath = realpath(dirname(__FILE__));
             return $alert;
         }
     }
+ }
+ public function show_customers($id){
+    $query = "SELECT * FROM tbl_customer WHERE id = '$id'";
+    $result = $this->db->select($query);
+    return $result;
  }
 }
 ?>
