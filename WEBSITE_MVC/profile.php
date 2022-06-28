@@ -24,7 +24,7 @@
         <div class="section group">
             <div class="content_top">
                 <div class="heading">
-                <h3>Danh sách mua hàng</h3>
+                <h3>Thông tin khách hàng</h3>
                 </div>
                 <div class="clear"></div>
             </div>
