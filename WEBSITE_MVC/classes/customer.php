@@ -23,7 +23,7 @@ $filepath = realpath(dirname(__FILE__));
     $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
     $password = mysqli_real_escape_string($this->db->link, $data['password']);     //md5
     if($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" || $country == "" || $phone == "" || $password == "" ){
-        $alert = "<span class='error'>Fields không được để trống</span>";
+        $alert = "<span class='error'>Bạn không được để trống</span>";
         return $alert;
     } else {
         $check_email = "SELECT * FROM tbl_customer WHERE email = '$email' LIMIT 1";
@@ -70,5 +70,27 @@ $filepath = realpath(dirname(__FILE__));
     $result = $this->db->select($query);
     return $result;
  }
-}
+ public function update_customers($data,$id){
+    $name = mysqli_real_escape_string($this->db->link, $data['name']);
+    $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
+    $email = mysqli_real_escape_string($this->db->link, $data['email']);
+    $address = mysqli_real_escape_string($this->db->link, $data['address']);
+    $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+    if($name == "" || $zipcode == "" || $email == "" || $address == "" || $phone == "" ){
+        $alert = "<span class='error'>Bạn không được để trống</span>";
+        return $alert;
+    } else {
+            $query = "UPDATE tbl_customer SET name='$name' ,zipcode='$zipcode' ,email='$email' ,address='$address' ,phone='$phone' WHERE id= '$id'";
+            $result = $this->db->insert($query);
+            if($result){
+                $alert = "<span class='success'>Người dùng đã được chỉnh sửa thành công</span>";
+                return $alert;
+            } else {
+                $alert = "<span class='error'>Người dùng chỉnh sửa không thành công</span>";
+                return $alert;
+            }
+        }
+    }
+ }
+
 ?>

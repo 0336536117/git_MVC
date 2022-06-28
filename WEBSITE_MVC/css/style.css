@@ -2481,4 +2481,9 @@ input.grey{
 }
 .error{
 	color:red;
+	font-size: 18px;
+}
+.success{
+	color:rgb(51, 255, 0);
+	font-size: 18px;
 }

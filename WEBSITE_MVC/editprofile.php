@@ -12,23 +12,30 @@
 // 	echo "<script>window.location = '404.php'</script>";
 // } else {
 // 	$id = $_GET['proid'];
-// }if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
-//     $quantity = $_POST['quantity'];
-//     $AddtoCart = $ct -> add_to_cart($id,$quantity);
 // }
+$id = Session::get('customer_id');
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])){
+    $UpdateCustomers = $cs -> update_customers($_POST,$id);
+}
 ?>
-
 <div class="main">
-	
     <div class="content">	
         <div class="section group">
             <div class="content_top">
                 <div class="heading">
-                <h3>Thông tin khách hàng</h3>
+                <h3>Chình sửa thông tin khách hàng</h3>
                 </div>
                 <div class="clear"></div>
             </div>
+            <form action="" method="post">
             <table class="tblone">
+                <tr>
+                        <?php
+                            if(isset($UpdateCustomers)){
+                                echo '<td colspan="3">'.$UpdateCustomers.'</td>';
+                            }
+                        ?>
+                </tr>
                 <?php
                 $id = Session::get('customer_id');
                     $get_customers = $cs->show_customers($id);
@@ -38,22 +45,22 @@
                 <tr>
                     <td>Name</td>
                     <td>:</td>
-                    <td><?php echo $result['name'] ?></td>
+                    <td><input type="text" name="name" value="<?php echo $result['name'] ?>"></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>City</td>
                     <td>:</td>
-                    <td><?php echo $result['city'] ?></td>
-                </tr>
+                    <td><input type="text" name="name" value="<?php echo $result['city'] ?>"></td>
+                </tr> -->
                 <tr>
                     <td>Phone</td>
                     <td>:</td>
-                    <td><?php echo $result['phone'] ?></td>
+                    <td><input type="text" name="phone" value="<?php echo $result['phone'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td>:</td>
-                    <td><?php echo $result['email'] ?></td>
+                    <td><input type="text" name="email" value="<?php echo $result['email'] ?>"></td>
                 </tr>
                 <!-- <tr>
                     <td>Country</td>
@@ -63,15 +70,15 @@
                 <tr>
                     <td>Zipcode</td>
                     <td>:</td>
-                    <td><?php echo $result['zipcode'] ?></td>
+                    <td><input type="text" name="zipcode" value="<?php echo $result['zipcode'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Address</td>
                     <td>:</td>
-                    <td><?php echo $result['address'] ?></td>
+                    <td><input type="text" name="address" value="<?php echo $result['address'] ?>"></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><a href="editprofile.php">Update Profile</a></td>
+                    <td colspan="4"><input type="submit" name="save" value="Lưu" class="grey"></td>
 
                 </tr>
                
@@ -80,6 +87,7 @@
                     }
                 ?>
             </table>
+            </form>
         </div>
     </div>
 </div>
