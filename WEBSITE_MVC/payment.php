@@ -28,7 +28,7 @@
                 </div>
                 <div class="clear"></div>
                 <h3 class="payment">Chọn phương thức thanh toán của bạn</h3>
-                <a class="payment_href" href="offlinepayment.php">Thanh toán Offline</a>
+                <a class="payment_href" href="offlinepayment.php">Thanh toán Offline</a><br>
                 <a class="payment_href" href="onlinepayment.php">Thanh toán Online</a>
             </div>
         </div>

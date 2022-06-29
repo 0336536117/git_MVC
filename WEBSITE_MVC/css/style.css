@@ -2487,3 +2487,9 @@ input.grey{
 	color:rgb(51, 255, 0);
 	font-size: 18px;
 }
+.payment{
+	text-align: center;
+	font-size:20px;
+	color:blue;
+}
+
