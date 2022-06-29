@@ -32,7 +32,7 @@ $filepath = realpath(dirname(__FILE__));
     
             $query_insert = "INSERT INTO tbl_cart(productid,quantity,sid,image,price,productName) VALUES ('$id','$quantity','$sid','$image','$price','$productName')";
             $insert_cart = $this->db->insert($query_insert);
-            if($result){
+            if($insert_cart){
                 header('Location:cart.php');   
                 // return $alert; 
             } else {
@@ -84,5 +84,23 @@ $filepath = realpath(dirname(__FILE__));
   $result = $this->db->select($query);
   return $result;
  }
+ public function insertOrder($customer_id){
+  $sid = session_id();
+  $query = "SELECT * FROM tbl_cart WHERE sid = '$sid'";
+  $get_product = $this->db->select($query);
+if($get_product){
+  while($result = $get_product->fetch_assoc()){
+    $productid = $result['productid'];
+    $productName = $result['productName'];
+    $quantity = $result['quantity'];
+    $price = $result['price'];
+    $image = $result['image'];
+    $customer_id = $customer_id;
+    $query_order = "INSERT INTO tbl_order(productid,productName,quantity,price,image,customer_id) VALUES ('$productid','$productName','$quantity','$price','$image',$customer_id)";
+    $insert_order = $this->db->insert($query_order);
+
+  }
+} 
 }
+ }
 ?>
