@@ -45,8 +45,8 @@ $filepath = realpath(dirname(__FILE__));
     }
  }
  public function login_customers($data){
-    $email = mysqli_real_escape_string($this->db->link, $data['email']);       //md5
-    $password = mysqli_real_escape_string($this->db->link, $data['password']);
+    $email = mysqli_real_escape_string($this->db->link, $data['email']);      
+    $password = mysqli_real_escape_string($this->db->link, $data['password']);//md5
     if($email == "" || $password == "" ){
         $alert = "<span class='error'>Email hoặc Password không được để trống</span>";
         return $alert;
