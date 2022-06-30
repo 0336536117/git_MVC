@@ -1394,7 +1394,7 @@ p.note{
   border-bottom: 1px solid #ddd;
   font-size: 30px;
   margin-bottom: 20px;
-  width: 141px;
+  width: 500px;
 }
 .tblone {
   border: 1px solid #fff;
@@ -2538,4 +2538,9 @@ a.a_order{
 h2.success_order{
 	text-align: center;
 	color: red;
+}
+.success_note{
+	padding:5px;
+	font-size: 17px;
+	text-align: center;
 }
