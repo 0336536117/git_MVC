@@ -125,7 +125,7 @@ include 'lib/session.php';
 		if($login_check == false){
 			echo '  ';
 		} else {
-			echo '<li><a href="profile.php">Thông tin khách hàng</a> </li>';
+			echo '<li><a href="profile.php">Thông tin KH</a> </li>';
 		}
 	?>
 	  <li><a href="contact.php">Liên hệ</a> </li>
