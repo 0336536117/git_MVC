@@ -118,5 +118,10 @@ public function get_cart_ordered($customer_id){
   $get_cart_ordered = $this->db->select($query);
   return $get_cart_ordered;
 }
+public function get_inbox_cart(){
+  $query = "SELECT * FROM tbl_order ORDER BY date_order";
+  $get_inbox_cart = $this->db->select($query);
+  return $get_inbox_cart;
+}
  }
 ?>
