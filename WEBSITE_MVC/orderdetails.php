@@ -27,11 +27,11 @@
 						<table class="tblone">
 							<tr>
                                 <th width="5%">ID</th>   
-								<th width="20%">Tên sản phẩm</th>
+								<th width="15%">Tên sản phẩm</th>
 								<th width="10%">Hình ảnh</th>
 								<th width="15%">Giá sản phẩm</th>
-								<th width="25%">Số lượng</th>
-                                <th width="10%">Ngày đặt</th>
+								<th width="10%">Số lượng</th>
+                                <th width="20%">Ngày đặt</th>
                                 <th width="10%">Trạng thái</th>
 								<th width="10%">Chỉnh sửa</th>
 							</tr>
