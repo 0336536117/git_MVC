@@ -13,6 +13,19 @@ if(!isset($_GET['customerid']) || $_GET['customerid'] == NULL){
 }
 $cs = new customer();
 ?>
+<style>
+    table tr td{
+        color:blue;
+        font-size: 18px;
+        font-weight:bold;
+    }
+    input{
+        color:black;
+        font-weight: bold;
+        text-align: center;
+        font-size: 17px;
+    }
+    </style>
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Sửa danh mục sản phẩm</h2>
@@ -29,42 +42,42 @@ $cs = new customer();
                     <table class="form">					
                         <tr>
                             <td>Name</td>
-                            <td>:</td>
+                            <td>--> :</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['name'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>City</td>
-                            <td>:</td>
+                            <td>--> :</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['city'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td>:</td>
+                            <td>--> :</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['phone'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>:</td>
+                            <td>--> :</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['email'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td>:</td>
+                            <td>--> :</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['address'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Zipcode</td>
-                            <td>:</td>
+                            <td>--> :</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['zipcode'] ?>" name="catName" class="medium" />
                             </td>

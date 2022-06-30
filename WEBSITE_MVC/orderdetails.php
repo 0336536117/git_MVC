@@ -1,28 +1,18 @@
 <?php
     include 'inc/head.php';
 ?>
+
 <?php
 	$login_check = Session::get('customer_login');
     if($login_check == false){
         header ('Location:login.php');
     }
 ?>
-
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
 			    	<h2>Chi tiết đơn hàng của bạn</h2>
-					<!-- <?php 
-						if(isset($update_quantity_cart)){
-							echo $update_quantity_cart;
-						}
-					?>
-					<?php 
-						if(isset($delcart)){
-							echo $delcart;
-						}
-					?> -->
 					<br>
 						<table class="tblone">
 							<tr>
@@ -67,14 +57,12 @@
                                 <?php 
                                     } else {
                                 ?>
-								<td><a href="?cartid=<?php echo $result['cartid']; ?>">Xóa</a></td>
+								<td><a onclick="return confirm('Bạn có muốn xóa không')" href="?cartid=<?php echo $result['cartid'] ?>">Xóa</a></td>
                                 <?php
                                     }
                                 ?>
 							</tr>
 								<?php
-									// $subtotal += $total;
-									// $qty = $qty + $result['quantity'];
 									}
 								}
 								?>

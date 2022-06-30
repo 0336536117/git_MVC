@@ -123,5 +123,19 @@ public function get_inbox_cart(){
   $get_inbox_cart = $this->db->select($query);
   return $get_inbox_cart;
 }
+public function shifted($id,$time,$price){
+  $id = mysqli_real_escape_string($this->db->link, $id);
+  $time = mysqli_real_escape_string($this->db->link, $time);
+  $price = mysqli_real_escape_string($this->db->link, $price);
+  $query = "UPDATE tbl_order SET status = '1' WHERE id = '$id' AND date_order = '$time' AND price = '$price'";
+      $result = $this->db->update($query);
+      if($result){
+        $msg = "<span style='color:green;font-size:18px'>Cập nhật đơn hàng thành công</span><br>";
+        return $msg;
+      } else {
+        $msg = "<span style='color:red;font-size:18px'>Cập nhật đơn hàng không thành công</span>";
+        return $msg;
+       }
+}
  }
 ?>

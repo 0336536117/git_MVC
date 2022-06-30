@@ -4,12 +4,25 @@
 $filepath = realpath(dirname(__FILE__));
     include_once ($filepath.'/../classes/cart.php');
 	include_once ($filepath.'/../helpers/format.php');
-
+?>
+<?php
+$ct = new cart();
+if(isset($_GET['shidtid'])){
+	$id = $_GET['shidtid'];
+	$time = $_GET['time'];
+	$price = $_GET['price'];
+	$shifted = $ct->shifted($id,$time,$price);
+}
 ?>
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Inbox</h2>
-                <div class="block">        
+                <div class="block">
+					<?php
+					if(isset($shifted)){
+						echo $shifted; 
+					}
+					?>
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
@@ -45,7 +58,7 @@ $filepath = realpath(dirname(__FILE__));
 								<?php
 									if($result['status']==0){
 								?>
-									<a href="?shidtid=<?php echo $result['id'] ?> & price=<?php echo $result['price'] ?> & time=<?php echo $result['date_order'] ?>">Đang xử lý</a>
+									<a href="?shidtid=<?php echo $result['id'] ?> & price=<?php echo $result['price'] ?> & time=<?php echo $result['date_order'] ?>">Đang vận chuyển</a>
 								<?php
 									} else {
 								?>
