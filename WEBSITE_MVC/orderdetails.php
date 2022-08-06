@@ -57,7 +57,7 @@
                                 <?php 
                                     } else {
                                 ?>
-								<td><a onclick="return confirm('Bạn có muốn xóa không')" href="#">Xóa</a></td>
+								<td><a onclick="return confirm('Bạn có muốn xóa không')" href="?cartid=<?php echo $result['cartid'] ?>">Xóa</a></td>
                                 <?php
                                     }
                                 ?>
